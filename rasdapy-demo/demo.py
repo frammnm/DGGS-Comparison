@@ -57,7 +57,27 @@ query_executor.execute_write("create type jsonDictSet as set (jsonDictArray)")
 # Create test collection
 query_executor.execute_write("create collection test_json_dict jsonDictSet") 
 
+
+
 # Inser data into collection
+# No example bellow this commend has worked so far 
+
+
 
 # query_executor.execute_update_from_file("insert into test_json_dict values decode($1, 'json', '{\"formatParameters\": {\"domain\": \"[0:1000]\",\"basetype\": struct { char k, long v } } })'", "/home/rasdaman/Documents/TFM/include/rasdapy-demo/dggs_sample.json")
-query_executor.execute_update_from_file("insert into test_json_dict values decode($1, 'csv', '{\"formatParameters\": {\"domain\": \"[0:0,1:254]\",\"basetype\": struct { char key, long value } } })'", "/home/rasdaman/Documents/TFM/include/rasdapy-demo/dggs_sample_4.csv")
+# query_executor.execute_update_from_file("insert into test_json_dict values decode($1, 'csv', '{\"formatParameters\": {\"domain\": \"[0:0,1:254]\",\"basetype\": struct { char key, long value } } })'", "/home/rasdaman/Documents/TFM/include/rasdapy-demo/dggs_sample_4.csv")
+
+
+# query_basic = ' insert into test_basic values decode($1, "csv", "{ \"formatParameters\": {\"domain\": \"[0:1,0:2]\",\"basetype\": \"long\" } }") '
+
+
+# query_executor.execute_update_from_file(query_basic, "/home/rasdaman/Documents/TFM/include/DGGS-Comparison/rasdapy-demo/dggs_sample_6.csv")
+
+
+
+# query = """ insert into test_json_dict
+# values decode($1, "csv", "{ \"formatParameters\": {
+#       \"domain\": \"[0:0,0:1]",
+#       \"basetype\": \"struct{char key, long value}\" } }") 
+#       """
+# query_executor.execute_update_from_file(query, "/home/rasdaman/Documents/TFM/include/DGGS-Comparison/rasdapy-demo/dggs_sample_5.csv")
